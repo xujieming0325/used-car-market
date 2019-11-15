@@ -1,0 +1,16 @@
+<!--底部导航-->
+<div class="footer" id="foot">
+	<p class="tc">
+		<{foreach from=$partlist key=key item=part}>
+		<a href="<{$weburl}>/<{$part.c_url}>" title="<{$part.c_name}>" <{if $part.c_target==2}>target="_blank"<{/if}>><{$part.c_name}></a> | 
+		<{/foreach}>
+	</p>
+	<p class="mt10"> Copyright  2013 <{$setting.copyright}> 版权所有. <{$setting.icp}><!-- 保留本链接  <a href="http://www.urkeji.com/" id="qq853616368" target="_blank">网站制作</a>--></p>
+	<p class="mt10"> 电话：<{$setting.tel}> 地址：<{$setting.address}></p>
+ </div>
+ <div id="right-side" class="right-side">
+    <ul>
+    <li class="side-top w4"><a id="backtop" title="返回顶部" href="#top" style="display: block;">返回顶部</a></li>
+  </ul>
+ </div>
+<!-- 版权 结束 -->

@@ -1,0 +1,196 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Nofollow标签的写法以及运用</title>
+<meta content="" name="keywords" />
+<meta content="二手网是专业的二手交易网，海量信息，精准数据，是买卖二手最佳选择！" name="description" />
+<link href="/templates/default/default/css/page.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="/static/js/pcall.js"></script>
+<script language="JavaScript">
+$(function(){
+	$(".hits").load("/index.php?m=ajax&ajax=1&newshit=1&id=166");
+})
+</script>
+</head>
+<body>
+<!--内容--> 
+<script type="text/javascript" src="/static/js/jquery.inputtext.js"></script>
+<script language="JavaScript">
+$(function(){
+	$("#carcount").load("/index.php?m=ajax&ajax=1&carcount=1");
+	$(".keywords").textRemindAuto();
+	})
+</script>
+<!--头部-->
+<script language="JavaScript">
+$(function(){
+	$("#login").load("/index.php?m=ajax&ajax=1&login=1");
+})
+</script>
+<div class="top">
+	<div class="top_main clearfix">
+		<div class="top_left">
+			欢迎来到二手网！<span id="login"></span>		</div>
+		<div class="top_right">
+			客服热线：<span class="orange01 fb">010-11111111</span>
+		</div>
+	</div>
+</div><div class="headw">
+	<div class="head">
+		<div class="logo"><a href="/">二手网</a></div>
+		 			<div class="topsearch">
+			<div class="topsearchbox">
+			<form method="get" action="/index.php">
+				<input type="text" name="k" class="keywords" value="请输入关键词，如宝马"><input type="submit" value="" class="button"/>
+				<input type="hidden" name="m" value="search">
+			</form>
+			</div>
+			<p class="topkeywords"><a href="/index.php?m=search&k=%E5%AE%9D%E9%A9%AC">宝马</a>&nbsp;&nbsp;<a href="/index.php?m=search&k=%E5%A5%94%E9%A9%B0">奔驰</a>&nbsp;&nbsp;<a href="/index.php?m=search&k=%E7%A6%8F%E5%85%8B%E6%96%AF">福克斯</a>&nbsp;&nbsp;</p>
+		</div>
+		<div class="carnum" id="carcount">
+		</div>
+	</div>
+</div>
+<div class="nav_list">
+	<ul class="clearfix">
+				<li>
+		<a href="/index.php" title="首页"  >首页</a>
+		</li>
+				<li>
+		<a href="/index.php?m=sellcar" title="卖车"  >卖车</a>
+		</li>
+				<li>
+		<a href="/index.php?m=search" title="买车"  >买车</a>
+		</li>
+				<li>
+		<a href="/index.php?m=qiugou" title="求购"  >求购</a>
+		</li>
+				<li>
+		<a href="/index.php?m=assesscar" title="评估"  >评估</a>
+		</li>
+				<li>
+		<a href="/index.php?m=dealer" title="商家"  >商家</a>
+		</li>
+				<li>
+		<a href="/index.php?m=news" title="攻略"  >攻略</a>
+		</li>
+				<li>
+		<a href="/contact/" title="联系"  >联系</a>
+		</li>
+			</ul>
+</div>
+<!--头部end --><div class="nav">您当前的位置：<a href="/">首页</a> <span>></span> 二手车行情</div>
+		<div class="main mt10 clearfix">
+			<div class="main_left">
+				<div class="commonbox02">
+					<h3>二手车行情</h3>
+					<div class="box">
+						<h2 class="news_title"> Nofollow标签的写法以及运用 </h2>
+						<p class="tc mt20">发表时间：2012-10-11 14:02:32 &nbsp;&nbsp;&nbsp;点击：<span class="hits orange01"></span></p>
+						<div class="news_info"> <p style="text-align:center;">
+	<a href="http://mytool.chinaz.com/baidusort.aspx" target="_blank">百度权重查询</a> <a href="http://jy.chinaz.com/" target="_blank">站长交易</a> <a href="http://jy.chinaz.com/" target="_blank">友情链接交换</a> <a href="http://www.313.com" target="_blank">网站建设</a>,<a href="http://www.313.com/" target="_blank">网站设计</a>,<a href="http://www.313.com" target="_blank">企业建站</a>就找<a href="http://www.313.com" target="_blank">313</a>
+</p>
+<p>
+	无论你是在做网站的外链建设还是交换友情链接，你都不可避免的会遇到一个问题，那就是nofollow标签，Nofollow的字面意思是不要追踪，是一个html标签值，目的是告诉搜索引擎spider不要追踪页面上某个特定的链接。
+</p>
+<p>
+	先来看个例子，nofollow标签的写法，以我的博客为例：
+</p>
+<p>
+	一个正常的A标签如下：
+</p>
+<p>
+	<a href="“http://www.xxx.com”">xxx</a>
+</p>
+<p>
+	现在我加上nofollow标签，如下：
+</p>
+<p>
+	<a href="“http://www.xxx.com”">xxx</a>
+</p>
+<p>
+	这样就顺利的告诉蜘蛛不要对此链接进行跟踪。当不想权重输给某个外部链接，但又不得不在内容上出现该链接时，那么就可以使用这样的方式屏蔽掉。
+</p>
+<p>
+	接下来和大家分享下nofollow真面目：
+</p>
+<p>
+	<strong>1、Nofollow标签限制蜘蛛爬取链接，被加上nofollow标签的外链无权重传递作用</strong>
+</p>
+<p>
+	有些网站为了避免被页面上的外部链接分走权重，于是对出现在页面上的外部链接进行了nofollow设置，那么这样的链接就没有权重传递效果，如果还没有链接诱饵的作用(比如搜搜问问)，那么就应该果断的停止该处外链的发布，让网站管理们玩单机去吧，比如网易博客、创业吧空间。
+</p>
+<p>
+	<strong>2、Nofollow标签的有无是交换友情链接时必须考察的因素之一</strong>
+</p>
+<p>
+	我们都知道，换友情链接并不是为了从对方网站上获得那么丁点的点击流量，而是为了提高网站权重的效果，有些站长会在友情链接部分加上nofollow标签，导致该友情链接失去了本来的意义，这种行为是属于欺骗行为，当然有些站长在和你换友情链接的时候没有nofollow标签，等到换了一段时间偷偷的加上nofollow标签，要避免这种情况就要求你隔一段时间就将和自己换友情链接的网站好好的检查一遍过去，遇到这种情况就必须果断立刻马上撤掉对方的链接。
+</p>
+<p>
+	<strong>3、Nofollow标签只是防止权重输出，并不能避免权重损失，但能引导蜘蛛的爬行</strong>
+</p>
+<p>
+	比如当你的页面上有5个外部链接，那么每个外部链接得到的权重为1/5，而你在其中的一个外部链接上添加了nofollow标签，使得蜘蛛不爬取这一个链接，那么剩余的4个外部链接得到的权重一样还是1/5，页面的权重一样会分给这5个链接，只是其中被设置了nofollow标签的链接所获得的权重是丢失而没有形成传递，这看似是一种“损人不利己”的行为，但是也有好处的，这样可以引导蜘蛛的爬行，让有带宽限制的蜘蛛在有限的时间，爬取到更多的页面。
+</p>
+<p>
+	<strong>4、Nofollow 和 External nofollow</strong>
+</p>
+<p>
+	从字面上意思来看，nofollow是“不要追踪”，而extenal nofollow 则是“外部的不要追踪”，也许你已经看出来了，他们两根本就是同一个意思，external nofollow 只是nofollow比较规范的书写而已，不用纠结，他们是一个意思!
+</p>
+<p>
+	Nofollow标签还可以运用于很多地方，比如wordpress文章评论部分的运用，还有为了用户体验而引进的一些外部链接上的使用等等。Nofollow是一把双刃剑，需要花点时间去琢磨。本文由seo学习网站长张冬龙原创，原文地址http://www.zhangdonglong.com/archives/615转载请注明，谢谢。
+</p> </div>
+					</div>
+				</div>
+				<div class="commonbox02 mt10">
+						<h3>相关新闻</h3>
+						<div class="box">
+							<ul class="about_news_list clearfix">
+																<li><a href="/news/201210/163.html">医疗行业百度竞价统计管理流程</a></li>
+																<li><a href="/news/201210/162.html">外链优化：有点入的外链才是优秀的外链</a></li>
+																								<li><a href="/news/201210/167.html">如何对关键词竞争度进行数据化分析</a></li>
+																<li><a href="/news/201210/168.html">手机站的百度优化技巧汇总</a></li>
+																<li><a href="/news/201210/169.html">网站“盲目推进”的SEO手段 你知道多少</a></li>
+															</ul>
+						</div>
+					</div>
+			</div>
+			<div class="main_right">
+				<script language="JavaScript">
+$(function() {
+	//热门车源
+	$("#hotcar").load("/index.php?m=ajax&ajax=1&cartype=hot");
+})
+</script>
+<div class="commonbox02">
+	<h3>热门车源</h3>
+	<div class="box">
+		<div id="hotcar"></div>
+	</div>
+</div>			</div>
+		</div>
+		<!--版权-->
+<!--底部导航-->
+<div class="footer" id="foot">
+	<p class="tc">
+				<a href="/index.php" title="首页" >首页</a> | 
+				<a href="/index.php?m=sellcar" title="卖车" >卖车</a> | 
+				<a href="/index.php?m=search" title="买车" >买车</a> | 
+				<a href="/index.php?m=qiugou" title="求购" >求购</a> | 
+				<a href="/index.php?m=assesscar" title="评估" >评估</a> | 
+				<a href="/index.php?m=dealer" title="商家" >商家</a> | 
+				<a href="/index.php?m=news" title="攻略" >攻略</a> | 
+				<a href="/contact/" title="联系" >联系</a> | 
+			</p>
+	<p class="mt10"> Copyright  2013 二手网 版权所有. 鲁ICP备01234567号<!-- 保留本链接 --> <a href="http://www.urkeji.com/" id="qq853616368" target="_blank">网站制作</a></p>
+	<p class="mt10"> 电话：010-11111111 地址：山东东营</p>
+ </div>
+ <div id="right-side" class="right-side">
+    <ul>
+    <li class="side-top w4"><a id="backtop" title="返回顶部" href="#top" style="display: block;">返回顶部</a></li>
+  </ul>
+ </div>
+<!-- 版权 结束 --></body>
+</html>

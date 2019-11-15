@@ -1,0 +1,486 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>二手网</title>
+		<meta content="二手网" name="keywords" />
+		<meta content="二手网是专业的二手交易网，海量信息，精准数据，是买卖二手最佳选择！" name="description" />
+		<link href="/escjywz_v1.0/templates/default/default/css/index.css" rel="stylesheet" type="text/css"/>
+		<script type="text/javascript" src="/escjywz_v1.0/static/js/pcall.js"></script>
+		<script type="text/javascript" src="/escjywz_v1.0/static/js/jquery.SuperSlide.2.1.js"></script>
+		<script type="text/javascript" src="/escjywz_v1.0/static/js/Validform_v5.3.2_min.js"></script>
+		<script language="JavaScript">
+			$(function() {
+				//品牌选择
+				$("#brand").change(function(){
+					$.get("/escjywz_v1.0/index.php?m=ajax&ajax=1", { 
+						bid :  $("#brand").val() 
+					}, function (data, textStatus){
+						   $("#subbrand").html(data); // 把返回的数据添加到页面上
+						}
+					);
+				});
+				
+				$div_li = $("div.car_tab ul li a");
+				$div_li.mouseover(function() {
+					$(this).addClass("here").parent().siblings().children().removeClass("here");
+					var index = $div_li.index(this);
+					$("div.cartab_box > div").eq(index).show().siblings().hide();
+				});
+
+				//表单验证
+				$(".carform").Validform({
+					tiptype:1
+				});
+				//热门车源
+				$("#hotcar").load("/escjywz_v1.0/index.php?m=ajax&ajax=1&cartype=indexhot");
+			})
+</script>
+		</head>
+	<body>
+<!--内容--> 
+<script type="text/javascript" src="/escjywz_v1.0/static/js/jquery.inputtext.js"></script>
+<script language="JavaScript">
+$(function(){
+	$("#carcount").load("/escjywz_v1.0/index.php?m=ajax&ajax=1&carcount=1");
+	$(".keywords").textRemindAuto();
+	})
+</script>
+<!--头部-->
+<script language="JavaScript">
+$(function(){
+	$("#login").load("/escjywz_v1.0/index.php?m=ajax&ajax=1&login=1");
+})
+</script>
+<div class="top">
+	<div class="top_main clearfix">
+		<div class="top_left">
+			欢迎来到二手网！<span id="login"></span>		</div>
+		<div class="top_right">
+			客服热线：<span class="orange01 fb">010-11111111</span>
+		</div>
+	</div>
+</div><div class="headw">
+	<div class="head">
+		<div class="logo"><a href="/escjywz_v1.0/">二手网</a></div>
+		 			<div class="topsearch">
+			<div class="topsearchbox">
+			<form method="get" action="/escjywz_v1.0/index.php">
+				<input type="text" name="k" class="keywords" value="请输入关键词，如宝马"><input type="submit" value="" class="button"/>
+				<input type="hidden" name="m" value="search">
+			</form>
+			</div>
+			<p class="topkeywords"><a href="/escjywz_v1.0/index.php?m=search&k=%E5%AE%9D%E9%A9%AC">宝马</a>&nbsp;&nbsp;<a href="/escjywz_v1.0/index.php?m=search&k=%E5%A5%94%E9%A9%B0">奔驰</a>&nbsp;&nbsp;<a href="/escjywz_v1.0/index.php?m=search&k=%E7%A6%8F%E5%85%8B%E6%96%AF">福克斯</a>&nbsp;&nbsp;</p>
+		</div>
+		<div class="carnum" id="carcount">
+		</div>
+	</div>
+</div>
+<div class="nav_list">
+	<ul class="clearfix">
+				<li>
+		<a href="/escjywz_v1.0/index.php" title="首页" class="here" >首页</a>
+		</li>
+				<li>
+		<a href="/escjywz_v1.0/index.php?m=sellcar" title="卖车"  >卖车</a>
+		</li>
+				<li>
+		<a href="/escjywz_v1.0/index.php?m=search" title="买车"  >买车</a>
+		</li>
+				<li>
+		<a href="/escjywz_v1.0/index.php?m=qiugou" title="求购"  >求购</a>
+		</li>
+				<li>
+		<a href="/escjywz_v1.0/index.php?m=assesscar" title="评估"  >评估</a>
+		</li>
+				<li>
+		<a href="/escjywz_v1.0/index.php?m=dealer" title="商家"  >商家</a>
+		</li>
+				<li>
+		<a href="/escjywz_v1.0/index.php?m=news" title="攻略"  >攻略</a>
+		</li>
+				<li>
+		<a href="/escjywz_v1.0/contact/" title="联系"  >联系</a>
+		</li>
+			</ul>
+</div>
+<!--头部end --><div class="main clearfix mt15">
+	<div class="index_left">
+		<div class="leftsearch">
+			<div class="leftsearchbox">
+				<h3 class="h301">品牌</h3>
+				<div class="clearfix"><a href="/escjywz_v1.0/index.php?m=search&c=b_1" >奥迪</a>				</div>
+			</div>
+			<div class="leftsearchbox">
+				<h3 class="h302">价格</h3>
+				<div class="clearfix"><a href="/escjywz_v1.0/index.php?m=search&c=p_1" >3万以下</a><a href="/escjywz_v1.0/index.php?m=search&c=p_2" >3-5万</a><a href="/escjywz_v1.0/index.php?m=search&c=p_3" >5-8万</a><a href="/escjywz_v1.0/index.php?m=search&c=p_4" >8-12万</a><a href="/escjywz_v1.0/index.php?m=search&c=p_5" >12-18万</a><a href="/escjywz_v1.0/index.php?m=search&c=p_6" >18-24万</a><a href="/escjywz_v1.0/index.php?m=search&c=p_7" >24-35万</a><a href="/escjywz_v1.0/index.php?m=search&c=p_8" >35-50万</a><a href="/escjywz_v1.0/index.php?m=search&c=p_9" >50-100万</a><a href="/escjywz_v1.0/index.php?m=search&c=p_10" >100万以上</a></div>
+			</div>
+			<div class="leftsearchbox">
+				<h3 class="h303">车型</h3>
+				<div class="clearfix"><a href="/escjywz_v1.0/index.php?m=search&c=m_1" >微型车</a><a href="/escjywz_v1.0/index.php?m=search&c=m_2" >小型车</a><a href="/escjywz_v1.0/index.php?m=search&c=m_3" >紧凑型车</a><a href="/escjywz_v1.0/index.php?m=search&c=m_4" >中型车</a><a href="/escjywz_v1.0/index.php?m=search&c=m_5" >中大型车</a><a href="/escjywz_v1.0/index.php?m=search&c=m_6" >豪华车</a><a href="/escjywz_v1.0/index.php?m=search&c=m_7" >MPV</a><a href="/escjywz_v1.0/index.php?m=search&c=m_8" >SUV</a><a href="/escjywz_v1.0/index.php?m=search&c=m_9" >跑车</a><a href="/escjywz_v1.0/index.php?m=search&c=m_38" >皮卡</a><a href="/escjywz_v1.0/index.php?m=search&c=m_39" >面包车</a></div>
+			</div>
+			<div class="leftsearchbox">
+				<h3 class="h304">车龄</h3>
+				<div class="clearfix"><a href="/escjywz_v1.0/index.php?m=search&c=a_1" >1年以内</a><a href="/escjywz_v1.0/index.php?m=search&c=a_2" >2年以内</a><a href="/escjywz_v1.0/index.php?m=search&c=a_3" >3年以内</a><a href="/escjywz_v1.0/index.php?m=search&c=a_4" >4年以内</a><a href="/escjywz_v1.0/index.php?m=search&c=a_5" >5年以内</a><a href="/escjywz_v1.0/index.php?m=search&c=a_6" >6年以内</a><a href="/escjywz_v1.0/index.php?m=search&c=a_7" >6年以上</a></div>
+			</div>
+		</div>
+	</div>
+	<div class="index_center">
+		<div class="focusBox" style="margin:0 auto">
+			<ul class="pic">
+								<li><a href="http://www.127.0.0.1" target="_blank"><img src="/upload/image/20140815/20140815160628_46768.jpg"/></a></li>
+								<li><a href="http://www.127.0.0.1" target="_blank"><img src="/upload/image/20140815/20140815160705_66293.jpg"/></a></li>
+							</ul>
+			<a class="prev" href="javascript:void(0)"></a>
+			<a class="next" href="javascript:void(0)"></a>
+			<ul class="hd">
+								<li></li>
+								<li></li>
+							</ul>
+		</div>
+		<script type="text/javascript">
+			/*鼠标移过，左右按钮显示*/
+			jQuery(".focusBox").hover(function(){ jQuery(this).find(".prev,.next").stop(true,true).fadeTo("show",0.2) },function(){ jQuery(this).find(".prev,.next").fadeOut() });
+			/*SuperSlide图片切换*/
+			jQuery(".focusBox").slide({ mainCell:".pic",effect:"fold", autoPlay:true, delayTime:600, trigger:"click"});
+		</script>
+		<div class="commonbox03 mt10">
+			<h3 class="mt10">推荐车商</h3>
+			<div class="box2">
+				<div class="tjdealer" style="margin:0 auto">
+					<div class="ohbox">
+					<ul class="piclist">
+											<li>
+							<a href="/escjywz_v1.0/index.php?m=shop&id=170" target="_blank">							<div class="noimg">暂无图片</div><span class="gray01">哈哈二手车</span>
+							</a>
+						</li>
+											<li>
+							<a href="/escjywz_v1.0/index.php?m=shop&id=168" target="_blank"><img src="/upload/image/20140920/20140920135316_63484.jpg" class="vt"/><span class="gray01">三和二手车行</span>
+							</a>
+						</li>
+											<li>
+							<a href="/escjywz_v1.0/index.php?m=shop&id=166" target="_blank"><img src="/upload/image/20140920/20140920134918_75508.jpg" class="vt"/><span class="gray01">优品二手车有限公司</span>
+							</a>
+						</li>
+										</ul>
+				</div>
+				<div class="pageBtn">
+					<span class="prev">&lt;</span>
+					<span class="next">&gt;</span>
+				</div>
+			</div>
+			<script type="text/javascript">
+			jQuery(".tjdealer").slide({mainCell:".piclist", effect:"leftLoop",vis:5,autoPlay:true});
+			</script>
+			</div>
+		</div>
+	</div>
+	<div class="index_right">
+		<div class="activityBox">
+			<div class="title">
+				<h2>特荐车源</h2>
+				<span class="prev"></span>
+				<span class="next"></span>
+			</div>
+			<div class="content">
+				<span class="leftZone"></span>
+				<div class="contentInner">
+					<ul>
+												<li>
+							<a href="/escjywz_v1.0/buycars/2014/09/20/90.html" target="_blank"><img src="http://localhost/escjywz_v1.0/index.html/upload/image/20140920/20140920142245_60685_small.jpg" /></a>
+							<p class="carname mt10"><a href="/escjywz_v1.0/buycars/2014/09/20/90.html" class="f14">海马M3 2013 款 1.5L 自动 豪华型</a></p>
+							<p class="mt5"><span class="f16 orange01">￥6.50万</span></p>
+							<p class="mt5 gray01">2013年2月上牌</p>
+						</li>
+												<li>
+							<a href="/escjywz_v1.0/buycars/2014/09/19/89.html" target="_blank"><img src="http://localhost/escjywz_v1.0/index.html/upload/image/20140920/20140920161722_85860_small.jpg" /></a>
+							<p class="carname mt10"><a href="/escjywz_v1.0/buycars/2014/09/19/89.html" class="f14">奇瑞A5 2009 款 超值版 1.5—MT 精英型</a></p>
+							<p class="mt5"><span class="f16 orange01">￥8.00万</span></p>
+							<p class="mt5 gray01">2010年4月上牌</p>
+						</li>
+												<li>
+							<a href="/escjywz_v1.0/buycars/2014/08/02/78.html" target="_blank"><img src="http://localhost/escjywz_v1.0/index.html/upload/image/20140912/20140912132137_72347_small.jpg" /></a>
+							<p class="carname mt10"><a href="/escjywz_v1.0/buycars/2014/08/02/78.html" class="f14">哈弗H6 2014 款 运动版 1.5T 手动 四驱 都市型</a></p>
+							<p class="mt5"><span class="f16 orange01">￥13.00万</span></p>
+							<p class="mt5 gray01">2013年6月上牌</p>
+						</li>
+											</ul>
+				</div>
+				<span class="rightZone"></span>
+			</div>
+		</div>
+		<script type="text/javascript">jQuery(".activityBox").slide({ mainCell:".contentInner ul", effect:"top",delayTime:400});</script>
+		<div class="commonbox03 mt10">
+			<h3 class="mt10">公告</h3>
+			<div class="box">
+				<ul class="noticelist clearfix">
+									</ul>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="main clearfix mt15">
+	<div class="main_left">
+		<div class="commonbox01">
+			<h3>商家推荐二手车</h3>
+			<div class="box">
+				<ul class="bigcarlist clearfix">
+										<li class="bbg">
+						<a href="/escjywz_v1.0/buycars/2014/08/02/78.html" target="_blank"><img src="http://localhost/escjywz_v1.0/index.html/upload/image/20140912/20140912132137_72347_small.jpg"/></a>
+						<p class="carname mt5"><a href="/escjywz_v1.0/buycars/2014/08/02/78.html" target="_blank">哈弗H6 2014 款 运动版 1.5T 手动 四驱 都市型</a></p>
+						<p class="price">￥13.00万</p>
+						<p class="gray01 mt5">2013年6月上牌&nbsp;&nbsp;11.00万公里</p>
+					</li>
+										<li class="bbg">
+						<a href="/escjywz_v1.0/buycars/2014/08/09/80.html" target="_blank"><img src="http://localhost/escjywz_v1.0/index.html/upload/image/20140912/20140912131652_71215_small.jpg"/></a>
+						<p class="carname mt5"><a href="/escjywz_v1.0/buycars/2014/08/09/80.html" target="_blank">海马S5 2014 款 1.6L 手动 智乐型</a></p>
+						<p class="price">￥11.00万</p>
+						<p class="gray01 mt5">2014年4月上牌&nbsp;&nbsp;0.50万公里</p>
+					</li>
+										<li class="bbg">
+						<a href="/escjywz_v1.0/buycars/2014/07/25/73.html" target="_blank"><img src="http://localhost/escjywz_v1.0/index.html/upload/image/20140912/20140912125258_47798_small.jpg"/></a>
+						<p class="carname mt5"><a href="/escjywz_v1.0/buycars/2014/07/25/73.html" target="_blank">雪佛兰 科鲁兹三厢 2013 款 1.6L SE MT WTCC版 </a></p>
+						<p class="price">￥11.00万</p>
+						<p class="gray01 mt5">2013年7月上牌&nbsp;&nbsp;9.00万公里</p>
+					</li>
+										<li >
+						<a href="/escjywz_v1.0/buycars/2014/07/13/70.html" target="_blank"><img src="http://localhost/escjywz_v1.0/index.html/upload/image/20140913/20140913125225_70397_small.jpg"/></a>
+						<p class="carname mt5"><a href="/escjywz_v1.0/buycars/2014/07/13/70.html" target="_blank">阿尔法·罗密欧 166 2003 款 166 3.0</a></p>
+						<p class="price">￥11.00万</p>
+						<p class="gray01 mt5">2005年4月上牌&nbsp;&nbsp;6.00万公里</p>
+					</li>
+										<li class="bbg">
+						<a href="/escjywz_v1.0/buycars/2014/07/13/71.html" target="_blank"><img src="http://localhost/escjywz_v1.0/index.html/upload/image/20140920/20140920140619_19728_small.jpg"/></a>
+						<p class="carname mt5"><a href="/escjywz_v1.0/buycars/2014/07/13/71.html" target="_blank">宝马3系 2012 款 320i 时尚型</a></p>
+						<p class="price">￥36.00万</p>
+						<p class="gray01 mt5">2010年4月上牌&nbsp;&nbsp;10.00万公里</p>
+					</li>
+										<li class="bbg">
+						<a href="/escjywz_v1.0/buycars/2014/07/13/69.html" target="_blank"><img src="http://localhost/escjywz_v1.0/index.html/upload/image/20140920/20140920141233_79285_small.jpg"/></a>
+						<p class="carname mt5"><a href="/escjywz_v1.0/buycars/2014/07/13/69.html" target="_blank">奥迪Q3 2014 款 30TFSI 进取型</a></p>
+						<p class="price">￥22.00万</p>
+						<p class="gray01 mt5">2012年2月上牌&nbsp;&nbsp;9.00万公里</p>
+					</li>
+										<li class="bbg">
+						<a href="/escjywz_v1.0/buycars/2014/07/13/68.html" target="_blank"><img src="http://localhost/escjywz_v1.0/index.html/upload/image/20140912/20140912120608_98818_small.jpg"/></a>
+						<p class="carname mt5"><a href="/escjywz_v1.0/buycars/2014/07/13/68.html" target="_blank">海马M3 2014 款 1.5L 自动 舒适型</a></p>
+						<p class="price">￥7.00万</p>
+						<p class="gray01 mt5">2013年12月上牌&nbsp;&nbsp;1.00万公里</p>
+					</li>
+										<li >
+						<a href="/escjywz_v1.0/buycars/2014/07/13/65.html" target="_blank"><img src="http://localhost/escjywz_v1.0/index.html/upload/image/20140912/20140912115627_76791_small.jpg"/></a>
+						<p class="carname mt5"><a href="/escjywz_v1.0/buycars/2014/07/13/65.html" target="_blank">北京汽车BJ40 2014 款 2.4L 手动 四驱 酷野版</a></p>
+						<p class="price">￥11.00万</p>
+						<p class="gray01 mt5">2008年5月上牌&nbsp;&nbsp;0.00万公里</p>
+					</li>
+									</ul>
+			</div>
+		</div>
+	</div>
+	<div class="main_right">
+		<div class="hotdealer">
+			<h3>热门车商</h3>
+						<div class="hotdealerbox mb10 clearfix">
+				<div class="img"><div class="noimg">暂无图片</div></div>
+				<div class="info">
+					<p><a href="/escjywz_v1.0/index.php?m=shop&id=170" target="_blank">哈哈二手车</a></p>
+					<p class="gray01">13536541235</p>
+					<p class="gray01">车源：<span class="orange01">0</span> 辆</p>
+				</div>
+			</div>
+						<div class="hotdealerbox mb10 clearfix">
+				<div class="img"><img src="/upload/image/20140920/20140920135316_63484.jpg" class="vt"></div>
+				<div class="info">
+					<p><a href="/escjywz_v1.0/index.php?m=shop&id=168" target="_blank">三和二手车行</a></p>
+					<p class="gray01">15019183221</p>
+					<p class="gray01">车源：<span class="orange01">0</span> 辆</p>
+				</div>
+			</div>
+						<div class="hotdealerbox mb10 clearfix">
+				<div class="img"><img src="/upload/image/20140920/20140920134918_75508.jpg" class="vt"></div>
+				<div class="info">
+					<p><a href="/escjywz_v1.0/index.php?m=shop&id=166" target="_blank">优品二手车有限公</a></p>
+					<p class="gray01">15900014410</p>
+					<p class="gray01">车源：<span class="orange01">8</span> 辆</p>
+				</div>
+			</div>
+					</div>	
+	</div>
+</div>
+<div class="main mt15 clearfix">
+	<div class="main_left">
+		<div class="commonbox01">
+			<h3>个人推荐二手车</h3>
+			<div class="box">
+				<ul class="bigcarlist clearfix">
+										<li class="bbg">
+						<a href="/escjywz_v1.0/buycars/2014/09/19/89.html" target="_blank"><img src="http://localhost/escjywz_v1.0/index.html/upload/image/20140920/20140920161722_85860_small.jpg"/></a>
+						<p class="carname mt5"><a href="/escjywz_v1.0/buycars/2014/09/19/89.html" target="_blank">奇瑞A5 2009 款 超值版 1.5—MT 精英型</a></p>
+						<p class="price">￥8.00万</p>
+						<p class="gray01 mt5">2010年4月上牌&nbsp;&nbsp;3.00万公里</p>
+					</li>
+										<li class="bbg">
+						<a href="/escjywz_v1.0/buycars/2014/08/12/87.html" target="_blank"><img src="http://localhost/escjywz_v1.0/index.html/upload/image/20140815/20140815222627_30887_small.jpg"/></a>
+						<p class="carname mt5"><a href="/escjywz_v1.0/buycars/2014/08/12/87.html" target="_blank">宝马X1(进口) 2012 款 xDrive 28i</a></p>
+						<p class="price">￥19.00万</p>
+						<p class="gray01 mt5">2006年4月上牌&nbsp;&nbsp;9.00万公里</p>
+					</li>
+										<li class="bbg">
+						<a href="/escjywz_v1.0/buycars/2014/08/01/74.html" target="_blank"><img src="http://localhost/escjywz_v1.0/index.html/upload/image/20140912/20140912120001_67741_small.jpg"/></a>
+						<p class="carname mt5"><a href="/escjywz_v1.0/buycars/2014/08/01/74.html" target="_blank">奥迪100 1994 款 2.6L（六缸）</a></p>
+						<p class="price">￥8.00万</p>
+						<p class="gray01 mt5">2002年1月上牌&nbsp;&nbsp;22.00万公里</p>
+					</li>
+										<li >
+						<a href="/escjywz_v1.0/buycars/2014/07/14/72.html" target="_blank"><img src="http://localhost/escjywz_v1.0/index.html/upload/image/20140920/20140920160719_25180_small.jpg"/></a>
+						<p class="carname mt5"><a href="/escjywz_v1.0/buycars/2014/07/14/72.html" target="_blank">海马M3 2013 款 1.5L 自动 舒适型</a></p>
+						<p class="price">￥11.00万</p>
+						<p class="gray01 mt5">2013年6月上牌&nbsp;&nbsp;3.00万公里</p>
+					</li>
+										<li class="bbg">
+						<a href="/escjywz_v1.0/buycars/2014/07/13/66.html" target="_blank"><img src="http://localhost/escjywz_v1.0/index.html/upload/image/20140920/20140920161410_60221_small.jpg"/></a>
+						<p class="carname mt5"><a href="/escjywz_v1.0/buycars/2014/07/13/66.html" target="_blank">奇瑞A3三厢 2012 款 1.6L CVT 进取型</a></p>
+						<p class="price">￥9.00万</p>
+						<p class="gray01 mt5">2013年1月上牌&nbsp;&nbsp;2.00万公里</p>
+					</li>
+									</ul>
+			</div>
+		</div>
+	</div>
+	<div class="main_right">
+		<div class="commonbox02">
+			<h3>热门车源排行</h3>
+			<div class="box">
+				<div id="hotcar" class="indexhotcarlist"></div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="main mt15">
+	<div class="indexbox clearfix">
+		<div class="left">
+			<h3><a href="/escjywz_v1.0/index.php?m=news&catid=1" class="more">更多</a>二手车行情</h3>
+			<div class="box">
+				<ul class="newslist">
+										<li><a href="/escjywz_v1.0/news/201210/218.html" target="_blank">传亚马逊中国总裁王汉华离职 官方不予评论</a></li>
+										<li><a href="/escjywz_v1.0/news/201210/178.html" target="_blank">详谈Global.asa清除及百度快照的更新</a></li>
+										<li><a href="/escjywz_v1.0/news/201210/179.html" target="_blank">隐藏淘宝客网站链接的3种形式</a></li>
+										<li><a href="/escjywz_v1.0/news/201210/183.html" target="_blank">SEO站内篇 “内力”强劲招数的威力才会更大</a></li>
+										<li><a href="/escjywz_v1.0/news/201210/184.html" target="_blank">实战分享：我是如何一周内恢复被K首页的</a></li>
+										<li><a href="/escjywz_v1.0/news/201210/185.html" target="_blank">浅析京东商城的SEO、用户体验及营销手段(一)</a></li>
+										<li><a href="/escjywz_v1.0/news/201210/186.html" target="_blank">实例告诉你关于内容更新的误区</a></li>
+										<li><a href="/escjywz_v1.0/news/201210/187.html" target="_blank">移动搜索引擎优化的10个小窍门</a></li>
+									</ul>
+			</div>
+		</div>
+		<div class="left">
+			<h3><a href="/escjywz_v1.0/index.php?m=news&catid=2" class="more">更多</a>交易过户</h3>
+			<div class="box">
+				<ul class="newslist">
+										<li><a href="/escjywz_v1.0/news/201409/220.html" target="_blank">test</a></li>
+										<li><a href="/escjywz_v1.0/news/201211/219.html" target="_blank">二手车过户勿忘环保变更 避免被罚款</a></li>
+										<li><a href="/escjywz_v1.0/news/201210/188.html" target="_blank">怎么提高百度经验的通过率？</a></li>
+										<li><a href="/escjywz_v1.0/news/201210/196.html" target="_blank">站长怎样才能做到更好</a></li>
+										<li><a href="/escjywz_v1.0/news/201210/197.html" target="_blank">中小企业电商网站应该如何优化SEO</a></li>
+										<li><a href="/escjywz_v1.0/news/201210/158.html" target="_blank">浅谈医疗类网站的优化重心</a></li>
+										<li><a href="/escjywz_v1.0/news/201210/160.html" target="_blank">百度对SEO相关词的搜索置顶提示</a></li>
+										<li><a href="/escjywz_v1.0/news/201210/164.html" target="_blank">seo要求逐渐增高 站长如何调整</a></li>
+									</ul>
+			</div>
+		</div>
+		<div class="left">
+			<h3><a href="/escjywz_v1.0/index.php?m=news&catid=3" class="more">更多</a>汽车养护</h3>
+			<div class="box">
+				<ul class="newslist">
+										<li><a href="/escjywz_v1.0/news/201210/192.html" target="_blank">网站优化策略之SEO必知的七大技巧</a></li>
+										<li><a href="/escjywz_v1.0/news/201210/193.html" target="_blank">9.25百度再次大幅度调整</a></li>
+										<li><a href="/escjywz_v1.0/news/201210/195.html" target="_blank">企业网站建设外包需要提前沟通的问题</a></li>
+										<li><a href="/escjywz_v1.0/news/201210/159.html" target="_blank">企业网站推广有那几种常见问题？</a></li>
+										<li><a href="/escjywz_v1.0/news/201210/161.html" target="_blank">以三大目标为导向推动网站内容营销</a></li>
+										<li><a href="/escjywz_v1.0/news/201210/173.html" target="_blank">一个专业做SEOer的必须建立自己长期的资源</a></li>
+									</ul>
+			</div>
+		</div>
+		<div class="right">
+			<h3><a href="/escjywz_v1.0/index.php?m=news&catid=4" class="more">更多</a>驾驶技巧</h3>
+			<div class="box">
+				<ul class="newslist">
+										<li><a href="/escjywz_v1.0/news/201210/191.html" target="_blank">seoer该如何在seo改革开放时代下活下去？</a></li>
+										<li><a href="/escjywz_v1.0/news/201210/194.html" target="_blank">百度现已趋于理智化平衡抗挣360搜索</a></li>
+									</ul>
+			</div>
+		</div>
+	</div>
+</div>
+<script language="JavaScript">
+$(function() {
+	$mark_li = $("div.marklist ul li");
+	$mark_li.mouseover(function() {
+		$(this).addClass("here").siblings().removeClass("here");
+		var index = $mark_li.index(this);
+		$("div.marklistbox > div").eq(index).show().siblings().hide();
+	});
+});
+</script>
+<div class="mt15 footbox">
+	<div class="box clearfix">
+		<div class="left">热门车系</div>
+		<div class="right">
+			<div class="marklist">
+				<ul class="clearfix">
+										<li class="here">A</li>
+										<li >B</li>
+										<li >J</li>
+										<li >M</li>
+									</ul>
+			</div>
+			<div class="marklistbox">
+								<div class="markbox ">
+											<a href="/escjywz_v1.0/index.php?m=search&k=%E5%A5%A5%E8%BF%AAQ5">奥迪Q5</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+											<a href="/escjywz_v1.0/index.php?m=search&k=%E5%A5%A5%E8%BF%AA">奥迪</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+									</div>
+								<div class="markbox hide">
+											<a href="/escjywz_v1.0/index.php?m=search&k=+%E5%AE%9D%E6%9D%A5"> 宝来</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+											<a href="/escjywz_v1.0/index.php?m=search&k=%E5%AE%9D%E9%A9%AC">宝马</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+									</div>
+								<div class="markbox hide">
+											<a href="/escjywz_v1.0/index.php?m=search&k=%E6%8D%B7%E8%BE%BE">捷达</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+									</div>
+								<div class="markbox hide">
+											<a href="/escjywz_v1.0/index.php?m=search&k=+%E8%BF%88%E8%85%BE"> 迈腾</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+									</div>
+							</div>
+		</div>
+	</div>
+	<div class="box clearfix">
+		<div class="left">友情链接</div>
+		<div class="right">
+			<ul class="link_list clearfix">
+								<li><a href="http://www.xm360so.com/" target="_blank">熊猫搜索</a></li>
+								<li><a href="http://idc.urkeji.com/" target="_blank">不限流量虚拟主机</a></li>
+							</ul>
+		</div>
+	</div>
+</div>
+<!--底部导航-->
+<div class="footer" id="foot">
+	<p class="tc">
+				<a href="/escjywz_v1.0/index.php" title="首页" >首页</a> | 
+				<a href="/escjywz_v1.0/index.php?m=sellcar" title="卖车" >卖车</a> | 
+				<a href="/escjywz_v1.0/index.php?m=search" title="买车" >买车</a> | 
+				<a href="/escjywz_v1.0/index.php?m=qiugou" title="求购" >求购</a> | 
+				<a href="/escjywz_v1.0/index.php?m=assesscar" title="评估" >评估</a> | 
+				<a href="/escjywz_v1.0/index.php?m=dealer" title="商家" >商家</a> | 
+				<a href="/escjywz_v1.0/index.php?m=news" title="攻略" >攻略</a> | 
+				<a href="/escjywz_v1.0/contact/" title="联系" >联系</a> | 
+			</p>
+	<p class="mt10"> Copyright  2013 二手网 版权所有. 鲁ICP备01234567号<!-- 保留本链接 --> <a href="http://www.urkeji.com/" id="qq853616368" target="_blank">网站制作</a></p>
+	<p class="mt10"> 电话：010-11111111 地址：山东东营</p>
+ </div>
+ <div id="right-side" class="right-side">
+    <ul>
+    <li class="side-top w4"><a id="backtop" title="返回顶部" href="#top" style="display: block;">返回顶部</a></li>
+  </ul>
+ </div>
+<!-- 版权 结束 --></body>
+</html>

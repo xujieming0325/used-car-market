@@ -1,0 +1,19 @@
+﻿1.恢复数据库，通过MySql数据库管理工具直接导入car.sql
+
+	car数据库类型 utf8 导入的时候注意一下
+
+2.修改根目录下面的config.php，修改数据库配置参数。
+
+3.cache,buycars,contact,news,templates_c,upload文件夹设置修改写入权限
+
+4.后台管理地址为：http://您的域名/adm.php,导入数据库以后的管理员用户名为admin 密码:123456
+
+5.后台登录清除缓存
+
+6.生成静态--全部
+
+
+
+注意：修改common.inc.php  第25行 define('WEB_DOMAIN', "http://www.urkeji.com");   www.urkeji.com替换成自己的域名
+
+----------------------------------------------------------------------

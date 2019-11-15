@@ -1,0 +1,239 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>详谈Global.asa清除及百度快照的更新</title>
+<meta content="" name="keywords" />
+<meta content="二手网是专业的二手交易网，海量信息，精准数据，是买卖二手最佳选择！" name="description" />
+<link href="/templates/default/default/css/page.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="/static/js/pcall.js"></script>
+<script language="JavaScript">
+$(function(){
+	$(".hits").load("/index.php?m=ajax&ajax=1&newshit=1&id=178");
+})
+</script>
+</head>
+<body>
+<!--内容--> 
+<script type="text/javascript" src="/static/js/jquery.inputtext.js"></script>
+<script language="JavaScript">
+$(function(){
+	$("#carcount").load("/index.php?m=ajax&ajax=1&carcount=1");
+	$(".keywords").textRemindAuto();
+	})
+</script>
+<!--头部-->
+<script language="JavaScript">
+$(function(){
+	$("#login").load("/index.php?m=ajax&ajax=1&login=1");
+})
+</script>
+<div class="top">
+	<div class="top_main clearfix">
+		<div class="top_left">
+			欢迎来到二手网！<span id="login"></span>		</div>
+		<div class="top_right">
+			客服热线：<span class="orange01 fb">010-11111111</span>
+		</div>
+	</div>
+</div><div class="headw">
+	<div class="head">
+		<div class="logo"><a href="/">二手网</a></div>
+		 			<div class="topsearch">
+			<div class="topsearchbox">
+			<form method="get" action="/index.php">
+				<input type="text" name="k" class="keywords" value="请输入关键词，如宝马"><input type="submit" value="" class="button"/>
+				<input type="hidden" name="m" value="search">
+			</form>
+			</div>
+			<p class="topkeywords"><a href="/index.php?m=search&k=%E5%AE%9D%E9%A9%AC">宝马</a>&nbsp;&nbsp;<a href="/index.php?m=search&k=%E5%A5%94%E9%A9%B0">奔驰</a>&nbsp;&nbsp;<a href="/index.php?m=search&k=%E7%A6%8F%E5%85%8B%E6%96%AF">福克斯</a>&nbsp;&nbsp;</p>
+		</div>
+		<div class="carnum" id="carcount">
+		</div>
+	</div>
+</div>
+<div class="nav_list">
+	<ul class="clearfix">
+				<li>
+		<a href="/index.php" title="首页"  >首页</a>
+		</li>
+				<li>
+		<a href="/index.php?m=sellcar" title="卖车"  >卖车</a>
+		</li>
+				<li>
+		<a href="/index.php?m=search" title="买车"  >买车</a>
+		</li>
+				<li>
+		<a href="/index.php?m=qiugou" title="求购"  >求购</a>
+		</li>
+				<li>
+		<a href="/index.php?m=assesscar" title="评估"  >评估</a>
+		</li>
+				<li>
+		<a href="/index.php?m=dealer" title="商家"  >商家</a>
+		</li>
+				<li>
+		<a href="/index.php?m=news" title="攻略"  >攻略</a>
+		</li>
+				<li>
+		<a href="/contact/" title="联系"  >联系</a>
+		</li>
+			</ul>
+</div>
+<!--头部end --><div class="nav">您当前的位置：<a href="/">首页</a> <span>></span> 二手车行情</div>
+		<div class="main mt10 clearfix">
+			<div class="main_left">
+				<div class="commonbox02">
+					<h3>二手车行情</h3>
+					<div class="box">
+						<h2 class="news_title"> 详谈Global.asa清除及百度快照的更新 </h2>
+						<p class="tc mt20">发表时间：2012-10-11 14:05:00 &nbsp;&nbsp;&nbsp;点击：<span class="hits orange01"></span></p>
+						<div class="news_info"> <p style="text-align:center;">
+	<a href="http://mytool.chinaz.com/baidusort.aspx" target="_blank">百度权重查询</a> <a href="http://jy.chinaz.com/" target="_blank">站长交易</a> <a href="http://jy.chinaz.com/" target="_blank">友情链接交换</a> <a href="http://www.313.com" target="_blank">网站建设</a>,<a href="http://www.313.com/" target="_blank">网站设计</a>,<a href="http://www.313.com" target="_blank">企业建站</a>就找<a href="http://www.313.com" target="_blank">313</a>
+</p>
+<p>
+	提起Global.asa木马，很多网站站长都很头疼，这种木马很难清除干净，严重地影响了我们的百度收录和快照，甚至会使网站被屏蔽、被K，被降权。
+</p>
+<p>
+	Global.asa是侵扰网站的木马，一般global.asa文件藏你FTP里不容易发现的，但从百度收录情况来看，会发现有很多不是自己网站的连接地址，当用户从百度点击进来的时候，网站的会自动跳转到其他网站。因为收录了很多恶意网站地址，所以百度很有可能会把你的网站K掉，所以发现问题及时处理是首要问题。
+</p>
+<p>
+	<strong>那么怎么删除global.asa木马呢?</strong>
+</p>
+<p>
+	global.asa这个文件一般是在根目录下的，因为被设置了只读属性，一般情况下自己是无法自己删除的，遇到这种情况，你可以先登陆FTP，在网站根目录下建立一个文件夹，然后将global.asa这个文件移动到文件夹中，再登陆主机管理平台删除这个文件夹即可，通常情况下，都能删除，如果万一删除不了，那只能请空间商帮你删除了。
+</p>
+<p>
+	删除了global.asa不能完事，要检查一下根目录是否还有可疑的文件，有的话，一并删除。
+</p>
+<p>
+	为了安全起见，我删除文件后，还把网站的数据下载到本地硬盘后把空间数据全部删除，在硬盘操作，把除去上传的图片、各栏目相关的文件以及重要程序文件外，都删除了，然后重新拷入干净的数据，对图片文件也进行了核查，以防有隐藏的木马，都核准无误了，重新上传到空间，如果你不嫌麻烦，也可以这么做。
+</p>
+<p>
+	<strong>删除木马后还需要做什么呢？</strong>
+</p>
+<p>
+	不能删除木马就没事了，还要检查一下漏洞。并进行下列几项的检查：
+</p>
+<p>
+	1、登陆FTP，为含有登陆后台的文件夹改名（如：把动易admin文件夹改名为dengluj等）
+</p>
+<p>
+	2、登陆网站后台，进行设置。（如：设置动易：网站信息--网站选项--后台管理目录：）
+</p>
+<p>
+	3、检查一下页面上传的代码及各栏目的上传权限（包括文本编辑器FCKeditor等），这是重点防御的地方。
+</p>
+<p>
+	4、给后台登陆加上验证码、管理验证等，做好深度加密。
+</p>
+<p>
+	5、设置网站的防Sql注入
+</p>
+<p>
+	6、数据库扩展名改成普通网页名称并加密
+</p>
+<p>
+	其实做做到这步基本算是大功告成了，接下来的问题是，百度还有一堆垃圾快照了。
+</p>
+<p>
+	<strong>如何解决百度快照的问题？</strong>
+</p>
+<p>
+	很长时间，百度收录都留有很多垃圾信息，点那些垃圾信息，直接通达我们网站的相关文件，但是点快照，就会先显示那些垃圾网站的信息，这些垃圾信息严重地影响了我们的百度快照和收录情况，也很容易降权，那么如果解决呢？
+</p>
+<p>
+	有人说用投诉百度快照的办法，我试了多次了，不管用，百度根本就不协助处理，经过两个多月的研究，我终于找到了另一种方法，现推荐给大家。
+</p>
+<p>
+	1、查看百度近日收录搜索，基本都可以再24小时收录里查看到。
+</p>
+<p>
+	2、找出那些不是你网站文章的名称，点击查看ID和在你网站上对应的文章。
+</p>
+<p>
+	3、把该垃圾文章看到的ID全部拷贝，粘贴在文本文件中；
+</p>
+<p>
+	4、把找出的网站对应文章先删除了，放回收站里。如没有回收站，那就对有用文章，再重发一个新的，旧的彻底删除了。
+</p>
+<p>
+	5、所有都查找完以后，将含有这些垃圾文章的文本文件命名为sitemap.txt
+</p>
+<p>
+	6、登陆百度站长平台，到站长工具----站点管理----进入工具区----死链工具，提交sitemap.txt文件，目的地告诉百度这些是死链接，不要收录了。
+</p>
+<p>
+	7、对刚才删除的网站文章查看一下，如果有需要的文章，就重发一个新文章，将旧文章彻底删除了。
+</p>
+<p>
+	8、清除一下网站缓存
+</p>
+<p>
+	9、如果被百度屏蔽了，就到百度站长平台的网站安全检测里申诉一下即可解除。
+</p>
+<p>
+	10、继续更新你的文章，不要因为木马侵扰而中断。
+</p>
+<p>
+	好了，通过上述的努力，出不来两天，你再查看百度收录，那些垃圾网站信息都没有了，百度收录也回归正常了。
+</p>
+<p>
+	以上就是我对global.asa木马摸索出的处理办法，我的网站如今已经恢复正常了。
+</p>
+<p>
+	原文来源于：http://www.llxiqu.com/zjwm/ShowArticle.asp?ArticleID=2169&nbsp;
+</p> </div>
+					</div>
+				</div>
+				<div class="commonbox02 mt10">
+						<h3>相关新闻</h3>
+						<div class="box">
+							<ul class="about_news_list clearfix">
+																<li><a href="/news/201210/177.html">从百度降权到恢复百度权重 做好内容才是关键</a></li>
+																<li><a href="/news/201210/176.html">百度文库里面的链接能传递权重吗？</a></li>
+																<li><a href="/news/201210/172.html">15个应该注意的SEO事项</a></li>
+																								<li><a href="/news/201210/179.html">隐藏淘宝客网站链接的3种形式</a></li>
+																<li><a href="/news/201210/183.html">SEO站内篇 “内力”强劲招数的威力才会更大</a></li>
+																<li><a href="/news/201210/184.html">实战分享：我是如何一周内恢复被K首页的</a></li>
+															</ul>
+						</div>
+					</div>
+			</div>
+			<div class="main_right">
+				<script language="JavaScript">
+$(function() {
+	//热门车源
+	$("#hotcar").load("/index.php?m=ajax&ajax=1&cartype=hot");
+})
+</script>
+<div class="commonbox02">
+	<h3>热门车源</h3>
+	<div class="box">
+		<div id="hotcar"></div>
+	</div>
+</div>			</div>
+		</div>
+		<!--版权-->
+<!--底部导航-->
+<div class="footer" id="foot">
+	<p class="tc">
+				<a href="/index.php" title="首页" >首页</a> | 
+				<a href="/index.php?m=sellcar" title="卖车" >卖车</a> | 
+				<a href="/index.php?m=search" title="买车" >买车</a> | 
+				<a href="/index.php?m=qiugou" title="求购" >求购</a> | 
+				<a href="/index.php?m=assesscar" title="评估" >评估</a> | 
+				<a href="/index.php?m=dealer" title="商家" >商家</a> | 
+				<a href="/index.php?m=news" title="攻略" >攻略</a> | 
+				<a href="/contact/" title="联系" >联系</a> | 
+			</p>
+	<p class="mt10"> Copyright  2013 二手网 版权所有. 鲁ICP备01234567号<!-- 保留本链接 --> <a href="http://www.urkeji.com/" id="qq853616368" target="_blank">网站制作</a></p>
+	<p class="mt10"> 电话：010-11111111 地址：山东东营</p>
+ </div>
+ <div id="right-side" class="right-side">
+    <ul>
+    <li class="side-top w4"><a id="backtop" title="返回顶部" href="#top" style="display: block;">返回顶部</a></li>
+  </ul>
+ </div>
+<!-- 版权 结束 --></body>
+</html>

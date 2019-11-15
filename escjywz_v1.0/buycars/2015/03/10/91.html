@@ -1,0 +1,375 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>阿尔法·罗密欧 156 2004 款 156 2.0-二手车网_二手车交易网 专业二手车网交易市场</title>
+		<meta content="二手车网,二手车交易网,二手车网交易市场,优品二手车网,优品二手车网" name="keywords" />
+		<meta content="二手车网是专业的东莞二手车交易网，海量信息，精准数据，是买卖二手车最佳选择！咨询热线4000-669-224" name="description" />
+		<link href="/templates/default/default/css/car.css" rel="stylesheet" type="text/css"/>
+		<script type="text/javascript" src="/static/js/jquery.js"></script>
+		<script type="text/javascript" src="/static/js/layer/layer.min.js"></script>
+		<script type="text/javascript" src="/static/js/laydate/laydate.js"></script>
+		<script type="text/javascript" src="/static/js/jquery.SuperSlide.2.1.js"></script>
+		<script type="text/javascript" src="/static/js/Validform_v5.3.2_min.js"></script>
+		<script language="JavaScript">
+			$(function() {
+				//品牌选择
+				$("#brand").change(function(){
+					$.get("/index.php?mod=ajax&ajax=1", { 
+						pid :  $("#brand").val() 
+					}, function (data, textStatus){
+						   $("#subbrand").html(data); // 把返回的数据添加到页面上
+						}
+					);
+				});
+				$("div.car_tab ul li a").mouseover(function() {
+					$(this).addClass("here").parent().siblings().children().removeClass("here");
+					var index = $div_li.index(this);
+					$("div.cartab_box > div").eq(index).show().siblings().hide();
+				});
+				$("#hits").load("/index.php?m=ajax&ajax=1&carshit=1&id=91");
+				//表单验证
+				$(".yuyueform").Validform({
+					tiptype:3
+				});
+
+				$('#yuyue').on('click', function(){
+					var yuyueindex =  $.layer({
+						type: 1,
+						title: '预约看车',
+						shade: [0.5, '#000'],
+						area: ['460px', 'auto'],
+						page: {dom: '#A1'}
+					});
+					$('#btnYuyueLookCar').on('click', function(){
+						$.post("/index.php?m=ajax&ajax=1&yuyue=1",{
+							pid: 91, 
+							uid: -1, 
+							name: $("#A1 input[name='name']").val(), 
+							mobilephone: $("#A1 input[name='mobilephone']").val(),
+							ordertime: $("#A1 input[name='ordertime']").val(),
+							orderinfo:$("#A1 textarea[name='orderinfo']").val()
+						},function(data){
+							if (data==1)
+							{
+								layer.close(yuyueindex);
+								layer.alert("预约成功！请耐心等待商家和您联系！", 9);
+								$('#yuyueform')[0].reset();
+							}
+							else{
+								layer.close(yuyueindex);
+								layer.alert("预约失败！请再次预约！", 9);
+							}
+						});
+					});
+				});
+				$('#xunjia').on('click', function(){
+					 var xunjiaindex = $.layer({
+						type: 1,
+						title: '咨询底价',
+						shade: [0.5, '#000'],
+						area: ['460px', 'auto'],
+						page: {dom: '#B1'}
+					});
+					$('#btnxuejia').on('click', function(){
+						$.post("/index.php?m=ajax&ajax=1&xunjia=1",{
+							pid: 91, 
+							uid: -1, 
+							name: $("#B1 input[name='name']").val(), 
+							mobilephone: $("#B1 input[name='mobilephone']").val(),
+						},function(data){
+							if (data==1)
+							{
+								layer.close(xunjiaindex);
+								layer.alert("询价成功！请耐心等待商家和您联系！", 9);
+								$('#xunjiaform')[0].reset();
+							}
+							else{
+								layer.close(xunjiaindex);
+								layer.alert("询价失败！请再次询价！", 9);
+							}
+						});
+					});
+				});	
+			})
+		</script>
+		</head>
+	<body>
+<!--内容--> 
+<script type="text/javascript" src="/static/js/jquery.inputtext.js"></script>
+<script language="JavaScript">
+$(function(){
+	$("#carcount").load("/index.php?m=ajax&ajax=1&carcount=1");
+	$(".keywords").textRemindAuto();
+	})
+</script>
+<!--头部-->
+<script language="JavaScript">
+$(function(){
+	$("#login").load("/index.php?m=ajax&ajax=1&login=1");
+})
+</script>
+<div class="top">
+	<div class="top_main clearfix">
+		<div class="top_left">
+			欢迎来到二手车网！<span id="login"></span>		</div>
+		<div class="top_right">
+			客服热线：<span class="orange01 fb">020-88896668</span>
+		</div>
+	</div>
+</div><div class="headw">
+	<div class="head">
+		<div class="logo"><a href="/">二手车网</a></div>
+		 			<div class="topsearch">
+			<div class="topsearchbox">
+			<form method="get" action="/index.php">
+				<input type="text" name="k" class="keywords" value="请输入关键词，如宝马"><input type="submit" value="" class="button"/>
+				<input type="hidden" name="m" value="search">
+			</form>
+			</div>
+			<p class="topkeywords"></p>
+		</div>
+		<div class="carnum" id="carcount">
+		</div>
+	</div>
+</div>
+<div class="nav_list">
+	<ul class="clearfix">
+				<li>
+		<a href="/index.php" title="首页"  >首页</a>
+		</li>
+				<li>
+		<a href="/index.php?m=sellcar" title="卖车"  >卖车</a>
+		</li>
+				<li>
+		<a href="/index.php?m=search" title="买车"  >买车</a>
+		</li>
+				<li>
+		<a href="/index.php?m=qiugou" title="求购"  >求购</a>
+		</li>
+				<li>
+		<a href="/index.php?m=assesscar" title="评估"  >评估</a>
+		</li>
+				<li>
+		<a href="/index.php?m=dealer" title="商家"  >商家</a>
+		</li>
+				<li>
+		<a href="/index.php?m=news" title="攻略"  >攻略</a>
+		</li>
+				<li>
+		<a href="/contact/" title="联系"  >联系</a>
+		</li>
+			</ul>
+</div>
+<!--头部end --><div class="nav">您当前的位置：<a href="/">首页</a> <span>></span> <a href="/">买车</a> <span>></span> 阿尔法·罗密欧 156 2004 款 156 2.0</div>
+<div class="main mt10">
+	<div class="carbox clearfix">
+		<div class="carbox_left">
+			<div class="carpicbox">
+												<img src="/static/img/bigcar.jpg"/>
+							</div>
+					</div>
+		<div class="carbox_right">
+			<div class="carname">阿尔法·罗密欧 156 2004 款 156 2.0</div>
+			<p class="gray01 mt20"><span class="fr">点击：<span class="orange01" id="hits"></span></span>发布日期：2015-03-10</p>
+			<div class="detail01 mt10">
+				<ul class="clearfix">
+					<li class="li01 mb10">价格：<span class="price">￥55.00万</span></li>	
+					<li>车型：微型车</li>
+					<li>颜色：</li>
+					<li>排量：0.00万公里</li>
+					<li>变速箱：0年0月</li>
+				</ul>
+				<div class="car_detail clearfix mt15">
+					<div class="item">
+						<strong>0年0月</strong>首次上牌
+					</div>
+					<div class="item">
+						<strong>0.00万公里</strong>行驶里程
+					</div>
+										<div class="item">
+						<strong></strong>归属地
+					</div>
+										<div class="item">
+						<strong></strong>排放标准
+					</div>
+				</div>
+				<div class="contactbox">
+					<div class="telbox">
+						<i></i>
+																					<p class="tel"><span class="fb"></span> </p>
+								<p class="tel"></p>
+																		</div>
+					<!--<div class="mobilecode">
+						<a href="#">扫码手机看</a>
+					</div>-->
+				</div>
+																</div>
+		</div>
+	</div>
+</div>
+<div class="notice mt20">
+	<span class="fr">客服电话：<span class="orange01">020-88896668</span></span>二手车交易车辆过户前请勿轻易给对方押金、订金，交易中请仔细查验车况，避免上当受骗。
+</div>
+<div class="main mt20 clearfix">
+	<div class="main_left">
+		<div class="cardetailbox">
+			<ul class="title_tab">
+				<li class="here"><a href="#A">车源详情</a></li>
+				<li><a href="#B">车主描述</a></li>
+				<li><a href="#D">大图展示</a></li>
+			</ul>
+			<div class="box">
+				<h3 id="A"><span class="title">车源详情</span></h3>
+				<ul class="cardetaillist clearfix">
+					<li><span class="gray">车型：</span>微型车</li>	
+					<li><span class="gray">行驶里程：</span>0.00万公里</li>
+					<li><span class="gray">颜色：</span>无</li>
+					<li><span class="gray" style="word-spacing:10px;">变速箱：</span>无</li>
+					<li><span class="gray">排量：</span>L</li>
+															<li><span class="gray">交强险到期时间：</span></li>
+																				<li><span class="gray">年检有效期至：</span></li>
+																				<li><span class="gray">4S店定期保养：</span></li>
+																				<li><span class="gray">车辆用途：</span></li>
+																				<li><span class="gray">看车地区：</span></li>
+														</ul>
+				<h3 id="B"><span class="title">车主描述</span></h3>
+				<div class="p20 cardetail">
+					
+				</div>
+							</div>
+		</div>
+	</div>
+	<div class="main_right">
+				<div class="shopbox mb10">
+			<h3></h3>
+			<div class="box">
+								<ul class="shopcontact">
+					<li><strong>电话：</strong></li>
+					<li><strong>地址：</strong></li>
+				</ul>
+				<ul class="cycs-fbys clearfix">
+				   <li>
+					  <p><strong>3</strong></p>
+					  <p>发布</p>
+				   </li>
+					<li>
+					  <p><strong>3</strong></p>
+					  <p>在售</p>
+				   </li>
+					<li class="last">
+					  <p><strong>0</strong></p>
+					  <p>已售</p>
+				   </li>
+				</ul>
+				<div class="cyssbut">
+					<span class="button_gray w200-h35"><a target="_blank" href="/index.php?m=shop&id=">进入商家店铺</a></span> 
+				</div>
+			</div>
+		</div>
+				<div class="commonbox01">
+			<h3><span class="title">同车系其他车源</span></h3>
+			<div class="box">
+				<ul class="carlist clearfix">
+										<li>
+						<a href="/buycars/2014/07/13/70.html" target="_blank"><img src="http://118escw.w168.mc-test.com/upload/image/20140913/20140913125225_70397_small.jpg"/></a>
+						<p class="mt10"><a href="/buycars/2014/07/13/70.html" target="_blank">阿尔法·罗密欧 166</a></p>
+						<p class="gray01"><span class="orange01 fb fr">￥11.00万</span>2005年4月上牌</p>
+					</li>
+									</ul>
+			</div>
+		</div>
+		<div class="commonbox01 mt10">
+			<h3><span class="title">同价位其他车源</span></h3>
+			<div class="box">
+				<ul class="carlist clearfix">
+									</ul>
+			</div>
+		</div>
+	</div>
+</div>
+<div id="A1" class="hide">
+	<div class="popnotice">
+		阿尔法·罗密欧 156 2004 款 156 2.0，售价￥55.00万，0年上牌，行驶0.00万公里
+	</div>
+	<div class="p20">
+	<form method="post" name="yuyueform" id="yuyueform" class="yuyueform">
+		<table class="poptable">
+		<tr>
+			<th><span class="red">*</span> 姓名：</th>
+			<td><input type="text" name="name" datatype="s" nullmsg="请填写姓名！"></td>
+		</tr>
+		<tr>
+			<th><span class="red">*</span> 手机号：</th>
+			<td><input type="text" name="mobilephone" datatype="m" nullmsg="请填写手机号！"></td>
+		</tr>
+		<tr>
+			<th><span class="red">*</span> 预约时间：</th>
+			<td><input type="text" class="laydate-icon" name="ordertime" datatype="*" nullmsg="请选择预约时间！" onclick="laydate()"></td>
+		</tr>
+		<tr>
+			<th><span class="red">*</span> 留言：</th>
+			<td><textarea name="orderinfo" rows="5" cols="25" datatype="*" nullmsg="请填写留言！"></textarea></td>
+		</tr>
+		<tr>
+			<th></th>
+			<td class="gray">您的信息不会在网站上显示，我们将保证您的隐私安全。</td>
+		</tr>
+		<tr>
+			<th></th>
+			<td><span class="button_orange h35-p25 mr5"><a id="btnYuyueLookCar" href="javascript:;">提交</a></span></td>
+		</tr>
+		</table>
+	</form>
+	</div>
+</div>
+<div id="B1" class="hide">
+	<div class="popnotice">
+		阿尔法·罗密欧 156 2004 款 156 2.0，售价￥55.00万，0年上牌，行驶0.00万公里
+	</div>
+	<div class="p20">
+		<form method="post" name="xunjiaform" id="xunjiaform" class="xunjiaform">
+		<table class="poptable">
+		<tr>
+			<th><span class="red">*</span> 姓名：</th>
+			<td><input type="text" name="name" datatype="s" nullmsg="请填写姓名！"></td>
+		</tr>
+		<tr>
+			<th><span class="red">*</span> 手机号：</th>
+			<td><input type="text" name="mobilephone" datatype="m" nullmsg="请填写手机号！"></td>
+		</tr>
+		<tr>
+			<th></th>
+			<td class="gray">您的信息不会在网站上显示，我们将保证您的隐私安全。</td>
+		</tr>
+		<tr>
+			<th></th>
+			<td><span class="button_orange h35-p25 mr5"><a id="btnxuejia" href="javascript:;">提交</a></span></td>
+		</tr>
+		</table>
+		</form>
+	</div>
+</div>
+<!--底部导航-->
+<div class="footer" id="foot">
+	<p class="tc">
+				<a href="/index.php" title="首页" >首页</a> | 
+				<a href="/index.php?m=sellcar" title="卖车" >卖车</a> | 
+				<a href="/index.php?m=search" title="买车" >买车</a> | 
+				<a href="/index.php?m=qiugou" title="求购" >求购</a> | 
+				<a href="/index.php?m=assesscar" title="评估" >评估</a> | 
+				<a href="/index.php?m=dealer" title="商家" >商家</a> | 
+				<a href="/index.php?m=news" title="攻略" >攻略</a> | 
+				<a href="/contact/" title="联系" >联系</a> | 
+			</p>
+	<p class="mt10"> Copyright  2013 二手车网 版权所有. 粤ICP备09171832号</p>
+	<p class="mt10"> 电话：020-88896668 地址：广东省广州</p>
+ </div>
+ <div id="right-side" class="right-side">
+    <ul>
+    <li class="side-top w4"><a id="backtop" title="返回顶部" href="#top" style="display: block;">返回顶部</a></li>
+  </ul>
+ </div>
+<!-- 版权 结束 --></body>
+</html>
+

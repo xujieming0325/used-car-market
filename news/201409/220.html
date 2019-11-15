@@ -1,0 +1,143 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>test</title>
+<meta content="test" name="keywords" />
+<meta content="二手网是专业的二手交易网，海量信息，精准数据，是买卖二手最佳选择！" name="description" />
+<link href="/templates/default/default/css/page.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="/static/js/pcall.js"></script>
+<script language="JavaScript">
+$(function(){
+	$(".hits").load("/index.php?m=ajax&ajax=1&newshit=1&id=220");
+})
+</script>
+</head>
+<body>
+<!--内容--> 
+<script type="text/javascript" src="/static/js/jquery.inputtext.js"></script>
+<script language="JavaScript">
+$(function(){
+	$("#carcount").load("/index.php?m=ajax&ajax=1&carcount=1");
+	$(".keywords").textRemindAuto();
+	})
+</script>
+<!--头部-->
+<script language="JavaScript">
+$(function(){
+	$("#login").load("/index.php?m=ajax&ajax=1&login=1");
+})
+</script>
+<div class="top">
+	<div class="top_main clearfix">
+		<div class="top_left">
+			欢迎来到二手网！<span id="login"></span>		</div>
+		<div class="top_right">
+			客服热线：<span class="orange01 fb">010-11111111</span>
+		</div>
+	</div>
+</div>
+<div class="headw">
+	<div class="head">
+		<div class="logo"><a href="/">二手网</a></div>
+		 			<div class="topsearch">
+			<div class="topsearchbox">
+			<form method="get" action="/index.php">
+				<input type="text" name="k" class="keywords" value="请输入关键词，如宝马"><input type="submit" value="" class="button"/>
+				<input type="hidden" name="m" value="search">
+			</form>
+			</div>
+			<p class="topkeywords"><a href="/index.php?m=search&k=%E5%AE%9D%E9%A9%AC">宝马</a>&nbsp;&nbsp;<a href="/index.php?m=search&k=%E5%A5%94%E9%A9%B0">奔驰</a>&nbsp;&nbsp;<a href="/index.php?m=search&k=%E7%A6%8F%E5%85%8B%E6%96%AF">福克斯</a>&nbsp;&nbsp;</p>
+		</div>
+		<div class="carnum" id="carcount">
+		</div>
+	</div>
+</div>
+<div class="nav_list">
+	<ul class="clearfix">
+				<li>
+		<a href="/index.php" title="首页"  >首页</a>
+		</li>
+				<li>
+		<a href="/index.php?m=sellcar" title="卖车"  >卖车</a>
+		</li>
+				<li>
+		<a href="/index.php?m=search" title="买车"  >买车</a>
+		</li>
+				<li>
+		<a href="/index.php?m=qiugou" title="求购"  >求购</a>
+		</li>
+				<li>
+		<a href="/index.php?m=assesscar" title="评估"  >评估</a>
+		</li>
+				<li>
+		<a href="/index.php?m=dealer" title="商家"  >商家</a>
+		</li>
+				<li>
+		<a href="/index.php?m=news" title="攻略"  >攻略</a>
+		</li>
+				<li>
+		<a href="/contact/" title="联系"  >联系</a>
+		</li>
+			</ul>
+</div>
+<!--头部end -->
+<div class="nav">您当前的位置：<a href="/">首页</a> <span>></span> 交易过户</div>
+		<div class="main mt10 clearfix">
+			<div class="main_left">
+				<div class="commonbox02">
+					<h3>交易过户</h3>
+					<div class="box">
+						<h2 class="news_title"> test </h2>
+						<p class="tc mt20">发表时间：2014-09-20 11:39:13 &nbsp;&nbsp;&nbsp;点击：<span class="hits orange01"></span></p>
+						<div class="news_info"> <img src="http://api.map.baidu.com/staticimage?center=121.535795%2C31.347904&zoom=12&width=558&height=360&markers=121.535795%2C31.347904&markerStyles=l%2CA" alt="" /> </div>
+					</div>
+				</div>
+				<div class="commonbox02 mt10">
+						<h3>相关新闻</h3>
+						<div class="box">
+							<ul class="about_news_list clearfix">
+																<li><a href="/news/201211/219.html">二手车过户勿忘环保变更 避免被罚款</a></li>
+																<li><a href="/news/201210/197.html">中小企业电商网站应该如何优化SEO</a></li>
+																<li><a href="/news/201210/196.html">站长怎样才能做到更好</a></li>
+																							</ul>
+						</div>
+					</div>
+			</div>
+			<div class="main_right">
+				<script language="JavaScript">
+$(function() {
+	//热门车源
+	$("#hotcar").load("/index.php?m=ajax&ajax=1&cartype=hot");
+})
+</script>
+<div class="commonbox02">
+	<h3>热门车源</h3>
+	<div class="box">
+		<div id="hotcar"></div>
+	</div>
+</div>			</div>
+		</div>
+		<!--版权-->
+<!--底部导航-->
+<div class="footer" id="foot">
+	<p class="tc">
+				<a href="/index.php" title="首页" >首页</a> | 
+				<a href="/index.php?m=sellcar" title="卖车" >卖车</a> | 
+				<a href="/index.php?m=search" title="买车" >买车</a> | 
+				<a href="/index.php?m=qiugou" title="求购" >求购</a> | 
+				<a href="/index.php?m=assesscar" title="评估" >评估</a> | 
+				<a href="/index.php?m=dealer" title="商家" >商家</a> | 
+				<a href="/index.php?m=news" title="攻略" >攻略</a> | 
+				<a href="/contact/" title="联系" >联系</a> | 
+			</p>
+	<p class="mt10"> Copyright  2013 二手网 版权所有. 鲁ICP备01234567号<!-- 保留本链接  <a href="http://www.urkeji.com/" id="qq853616368" target="_blank">网站制作</a>--></p>
+	<p class="mt10"> 电话：010-11111111 地址：山东东营</p>
+ </div>
+ <div id="right-side" class="right-side">
+    <ul>
+    <li class="side-top w4"><a id="backtop" title="返回顶部" href="#top" style="display: block;">返回顶部</a></li>
+  </ul>
+ </div>
+<!-- 版权 结束 --></body>
+</html>

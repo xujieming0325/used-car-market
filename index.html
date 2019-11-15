@@ -1,0 +1,330 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>车交易</title>
+		<meta content="车交易" name="keywords" />
+		<meta content="车交易是专业的二手交易网，海量信息，精准数据，是买卖二手最佳选择！" name="description" />
+		<link href="/templates/default/default/css/index.css" rel="stylesheet" type="text/css"/>
+		<script type="text/javascript" src="/static/js/pcall.js"></script>
+		<script type="text/javascript" src="/static/js/jquery.SuperSlide.2.1.js"></script>
+		<script type="text/javascript" src="/static/js/Validform_v5.3.2_min.js"></script>
+		<script language="JavaScript">
+			$(function() {
+				//品牌选择
+				$("#brand").change(function(){
+					$.get("/index.php?m=ajax&ajax=1", { 
+						bid :  $("#brand").val() 
+					}, function (data, textStatus){
+						   $("#subbrand").html(data); // 把返回的数据添加到页面上
+						}
+					);
+				});
+				
+				$div_li = $("div.car_tab ul li a");
+				$div_li.mouseover(function() {
+					$(this).addClass("here").parent().siblings().children().removeClass("here");
+					var index = $div_li.index(this);
+					$("div.cartab_box > div").eq(index).show().siblings().hide();
+				});
+
+				//表单验证
+				$(".carform").Validform({
+					tiptype:1
+				});
+				//热门车源
+				$("#hotcar").load("/index.php?m=ajax&ajax=1&cartype=indexhot");
+			})
+</script>
+		</head>
+	<body>
+<!--内容--> 
+<script type="text/javascript" src="/static/js/jquery.inputtext.js"></script>
+<script language="JavaScript">
+$(function(){
+	$("#carcount").load("/index.php?m=ajax&ajax=1&carcount=1");
+	$(".keywords").textRemindAuto();
+	})
+</script>
+<!--头部-->
+<script language="JavaScript">
+$(function(){
+	$("#login").load("/index.php?m=ajax&ajax=1&login=1");
+})
+</script>
+<div class="top">
+	<div class="top_main clearfix">
+		<div class="top_left">
+			欢迎来到车交易！<span id="login"></span>		</div>
+		<div class="top_right">
+			客服热线：<span class="orange01 fb">010-11111111</span>
+		</div>
+	</div>
+</div><div class="headw">
+	<div class="head">
+		<div class="logo"><a href="/"><img src="/upload/image/20190808/20190808155714_22702.png" alt="车交易"></a></div>
+		 			<div class="topsearch">
+			<div class="topsearchbox">
+			<form method="get" action="/index.php">
+				<input type="text" name="k" class="keywords" value="请输入关键词，如宝马"><input type="submit" value="" class="button"/>
+				<input type="hidden" name="m" value="search">
+			</form>
+			</div>
+			<p class="topkeywords"><a href="/index.php?m=search&k=%E5%AE%9D%E9%A9%AC">宝马</a>&nbsp;&nbsp;<a href="/index.php?m=search&k=%E5%A5%94%E9%A9%B0">奔驰</a>&nbsp;&nbsp;<a href="/index.php?m=search&k=%E7%A6%8F%E5%85%8B%E6%96%AF">福克斯</a>&nbsp;&nbsp;</p>
+		</div>
+		<div class="carnum" id="carcount">
+		</div>
+	</div>
+</div>
+<div class="nav_list">
+	<ul class="clearfix">
+				<li>
+		<a href="/index.php" title="首页" class="here" >首页</a>
+		</li>
+				<li>
+		<a href="/index.php?m=sellcar" title="卖车"  >卖车</a>
+		</li>
+				<li>
+		<a href="/index.php?m=search" title="买车"  >买车</a>
+		</li>
+				<li>
+		<a href="/index.php?m=qiugou" title="求购"  >求购</a>
+		</li>
+				<li>
+		<a href="/index.php?m=assesscar" title="评估"  >评估</a>
+		</li>
+				<li>
+		<a href="/index.php?m=dealer" title="商家"  >商家</a>
+		</li>
+				<li>
+		<a href="/index.php?m=news" title="攻略"  >攻略</a>
+		</li>
+				<li>
+		<a href="/contact/" title="联系"  >联系</a>
+		</li>
+			</ul>
+</div>
+<!--头部end --><div class="main clearfix mt15">
+	<div class="index_left">
+		<div class="leftsearch">
+			<div class="leftsearchbox">
+				<h3 class="h301">品牌</h3>
+				<div class="clearfix"><a href="/index.php?m=search&c=b_1" >奥迪</a>				</div>
+			</div>
+			<div class="leftsearchbox">
+				<h3 class="h302">价格</h3>
+				<div class="clearfix"><a href="/index.php?m=search&c=p_1" >3万以下</a><a href="/index.php?m=search&c=p_2" >3-5万</a><a href="/index.php?m=search&c=p_3" >5-8万</a><a href="/index.php?m=search&c=p_4" >8-12万</a><a href="/index.php?m=search&c=p_5" >12-18万</a><a href="/index.php?m=search&c=p_6" >18-24万</a><a href="/index.php?m=search&c=p_7" >24-35万</a><a href="/index.php?m=search&c=p_8" >35-50万</a><a href="/index.php?m=search&c=p_9" >50-100万</a><a href="/index.php?m=search&c=p_10" >100万以上</a></div>
+			</div>
+			<div class="leftsearchbox">
+				<h3 class="h303">车型</h3>
+				<div class="clearfix"><a href="/index.php?m=search&c=m_1" >微型车</a><a href="/index.php?m=search&c=m_2" >小型车</a><a href="/index.php?m=search&c=m_3" >紧凑型车</a><a href="/index.php?m=search&c=m_4" >中型车</a><a href="/index.php?m=search&c=m_5" >中大型车</a><a href="/index.php?m=search&c=m_6" >豪华车</a><a href="/index.php?m=search&c=m_7" >MPV</a><a href="/index.php?m=search&c=m_8" >SUV</a><a href="/index.php?m=search&c=m_9" >跑车</a><a href="/index.php?m=search&c=m_38" >皮卡</a><a href="/index.php?m=search&c=m_39" >面包车</a></div>
+			</div>
+			<div class="leftsearchbox">
+				<h3 class="h304">车龄</h3>
+				<div class="clearfix"><a href="/index.php?m=search&c=a_1" >1年以内</a><a href="/index.php?m=search&c=a_2" >2年以内</a><a href="/index.php?m=search&c=a_3" >3年以内</a><a href="/index.php?m=search&c=a_4" >4年以内</a><a href="/index.php?m=search&c=a_5" >5年以内</a><a href="/index.php?m=search&c=a_6" >6年以内</a><a href="/index.php?m=search&c=a_7" >6年以上</a></div>
+			</div>
+		</div>
+	</div>
+	<div class="index_center">
+		<div class="focusBox" style="margin:0 auto">
+			<ul class="pic">
+								<li><a href="http://www.127.0.0.1" target="_blank"><img src="/upload/image/20140815/20140815160628_46768.jpg"/></a></li>
+								<li><a href="http://www.127.0.0.1" target="_blank"><img src="/upload/image/20140815/20140815160705_66293.jpg"/></a></li>
+							</ul>
+			<a class="prev" href="javascript:void(0)"></a>
+			<a class="next" href="javascript:void(0)"></a>
+			<ul class="hd">
+								<li></li>
+								<li></li>
+							</ul>
+		</div>
+		<script type="text/javascript">
+			/*鼠标移过，左右按钮显示*/
+			jQuery(".focusBox").hover(function(){ jQuery(this).find(".prev,.next").stop(true,true).fadeTo("show",0.2) },function(){ jQuery(this).find(".prev,.next").fadeOut() });
+			/*SuperSlide图片切换*/
+			jQuery(".focusBox").slide({ mainCell:".pic",effect:"fold", autoPlay:true, delayTime:600, trigger:"click"});
+		</script>
+		<div class="commonbox03 mt10">
+			<h3 class="mt10">推荐车商</h3>
+			<div class="box2">
+				<div class="tjdealer" style="margin:0 auto">
+					<div class="ohbox">
+					<ul class="piclist">
+										</ul>
+				</div>
+				<div class="pageBtn">
+					<span class="prev">&lt;</span>
+					<span class="next">&gt;</span>
+				</div>
+			</div>
+			<script type="text/javascript">
+			jQuery(".tjdealer").slide({mainCell:".piclist", effect:"leftLoop",vis:5,autoPlay:true});
+			</script>
+			</div>
+		</div>
+	</div>
+	<div class="index_right">
+		<div class="activityBox">
+			<div class="title">
+				<h2>特荐车源</h2>
+				<span class="prev"></span>
+				<span class="next"></span>
+			</div>
+			<div class="content">
+				<span class="leftZone"></span>
+				<div class="contentInner">
+					<ul>
+											</ul>
+				</div>
+				<span class="rightZone"></span>
+			</div>
+		</div>
+		<script type="text/javascript">jQuery(".activityBox").slide({ mainCell:".contentInner ul", effect:"top",delayTime:400});</script>
+		<div class="commonbox03 mt10">
+			<h3 class="mt10">公告</h3>
+			<div class="box">
+				<ul class="noticelist clearfix">
+									</ul>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="main clearfix mt15">
+	<div class="main_left">
+		<div class="commonbox01">
+			<h3>商家推荐二手车</h3>
+			<div class="box">
+				<ul class="bigcarlist clearfix">
+									</ul>
+			</div>
+		</div>
+	</div>
+	<div class="main_right">
+		<div class="hotdealer">
+			<h3>热门车商</h3>
+					</div>	
+	</div>
+</div>
+<div class="main mt15 clearfix">
+	<div class="main_left">
+		<div class="commonbox01">
+			<h3>个人推荐二手车</h3>
+			<div class="box">
+				<ul class="bigcarlist clearfix">
+									</ul>
+			</div>
+		</div>
+	</div>
+	<div class="main_right">
+		<div class="commonbox02">
+			<h3>热门车源排行</h3>
+			<div class="box">
+				<div id="hotcar" class="indexhotcarlist"></div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="main mt15">
+	<div class="indexbox clearfix">
+		<div class="left">
+			<h3><a href="/index.php?m=news&catid=1" class="more">更多</a>二手车行情</h3>
+			<div class="box">
+				<ul class="newslist">
+									</ul>
+			</div>
+		</div>
+		<div class="left">
+			<h3><a href="/index.php?m=news&catid=2" class="more">更多</a>交易过户</h3>
+			<div class="box">
+				<ul class="newslist">
+										<li><a href="/news/201211/219.html" target="_blank">二手车过户勿忘环保变更 避免被罚款</a></li>
+									</ul>
+			</div>
+		</div>
+		<div class="left">
+			<h3><a href="/index.php?m=news&catid=3" class="more">更多</a>汽车养护</h3>
+			<div class="box">
+				<ul class="newslist">
+									</ul>
+			</div>
+		</div>
+		<div class="right">
+			<h3><a href="/index.php?m=news&catid=4" class="more">更多</a>驾驶技巧</h3>
+			<div class="box">
+				<ul class="newslist">
+									</ul>
+			</div>
+		</div>
+	</div>
+</div>
+<script language="JavaScript">
+$(function() {
+	$mark_li = $("div.marklist ul li");
+	$mark_li.mouseover(function() {
+		$(this).addClass("here").siblings().removeClass("here");
+		var index = $mark_li.index(this);
+		$("div.marklistbox > div").eq(index).show().siblings().hide();
+	});
+});
+</script>
+<div class="mt15 footbox">
+	<div class="box clearfix">
+		<div class="left">热门车系</div>
+		<div class="right">
+			<div class="marklist">
+				<ul class="clearfix">
+										<li class="here">A</li>
+										<li >B</li>
+										<li >J</li>
+										<li >M</li>
+									</ul>
+			</div>
+			<div class="marklistbox">
+								<div class="markbox ">
+											<a href="/index.php?m=search&k=%E5%A5%A5%E8%BF%AAQ5">奥迪Q5</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+											<a href="/index.php?m=search&k=%E5%A5%A5%E8%BF%AA">奥迪</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+									</div>
+								<div class="markbox hide">
+											<a href="/index.php?m=search&k=+%E5%AE%9D%E6%9D%A5"> 宝来</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+											<a href="/index.php?m=search&k=%E5%AE%9D%E9%A9%AC">宝马</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+									</div>
+								<div class="markbox hide">
+											<a href="/index.php?m=search&k=%E6%8D%B7%E8%BE%BE">捷达</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+									</div>
+								<div class="markbox hide">
+											<a href="/index.php?m=search&k=+%E8%BF%88%E8%85%BE"> 迈腾</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+									</div>
+							</div>
+		</div>
+	</div>
+	<div class="box clearfix">
+		<div class="left">友情链接</div>
+		<div class="right">
+			<ul class="link_list clearfix">
+								<li><a href="http://www.gdcxxy.net/" target="_blank">广东创新科技职业学院</a></li>
+							</ul>
+		</div>
+	</div>
+</div>
+<!--底部导航-->
+<div class="footer" id="foot">
+	<p class="tc">
+				<a href="/index.php" title="首页" >首页</a> | 
+				<a href="/index.php?m=sellcar" title="卖车" >卖车</a> | 
+				<a href="/index.php?m=search" title="买车" >买车</a> | 
+				<a href="/index.php?m=qiugou" title="求购" >求购</a> | 
+				<a href="/index.php?m=assesscar" title="评估" >评估</a> | 
+				<a href="/index.php?m=dealer" title="商家" >商家</a> | 
+				<a href="/index.php?m=news" title="攻略" >攻略</a> | 
+				<a href="/contact/" title="联系" >联系</a> | 
+			</p>
+	<p class="mt10"> Copyright  2013 车交易 版权所有. 粤ICP备01234567号<!-- 保留本链接  <a href="http://www.urkeji.com/" id="qq853616368" target="_blank">网站制作</a>--></p>
+	<p class="mt10"> 电话：010-11111111 地址：广东省茂名市电白区</p>
+ </div>
+ <div id="right-side" class="right-side">
+    <ul>
+    <li class="side-top w4"><a id="backtop" title="返回顶部" href="#top" style="display: block;">返回顶部</a></li>
+  </ul>
+ </div>
+<!-- 版权 结束 --></body>
+</html>

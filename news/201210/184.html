@@ -1,0 +1,224 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>实战分享：我是如何一周内恢复被K首页的</title>
+<meta content="" name="keywords" />
+<meta content="二手网是专业的二手交易网，海量信息，精准数据，是买卖二手最佳选择！" name="description" />
+<link href="/templates/default/default/css/page.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="/static/js/pcall.js"></script>
+<script language="JavaScript">
+$(function(){
+	$(".hits").load("/index.php?m=ajax&ajax=1&newshit=1&id=184");
+})
+</script>
+</head>
+<body>
+<!--内容--> 
+<script type="text/javascript" src="/static/js/jquery.inputtext.js"></script>
+<script language="JavaScript">
+$(function(){
+	$("#carcount").load("/index.php?m=ajax&ajax=1&carcount=1");
+	$(".keywords").textRemindAuto();
+	})
+</script>
+<!--头部-->
+<script language="JavaScript">
+$(function(){
+	$("#login").load("/index.php?m=ajax&ajax=1&login=1");
+})
+</script>
+<div class="top">
+	<div class="top_main clearfix">
+		<div class="top_left">
+			欢迎来到二手网！<span id="login"></span>		</div>
+		<div class="top_right">
+			客服热线：<span class="orange01 fb">010-11111111</span>
+		</div>
+	</div>
+</div><div class="headw">
+	<div class="head">
+		<div class="logo"><a href="/">二手网</a></div>
+		 			<div class="topsearch">
+			<div class="topsearchbox">
+			<form method="get" action="/index.php">
+				<input type="text" name="k" class="keywords" value="请输入关键词，如宝马"><input type="submit" value="" class="button"/>
+				<input type="hidden" name="m" value="search">
+			</form>
+			</div>
+			<p class="topkeywords"><a href="/index.php?m=search&k=%E5%AE%9D%E9%A9%AC">宝马</a>&nbsp;&nbsp;<a href="/index.php?m=search&k=%E5%A5%94%E9%A9%B0">奔驰</a>&nbsp;&nbsp;<a href="/index.php?m=search&k=%E7%A6%8F%E5%85%8B%E6%96%AF">福克斯</a>&nbsp;&nbsp;</p>
+		</div>
+		<div class="carnum" id="carcount">
+		</div>
+	</div>
+</div>
+<div class="nav_list">
+	<ul class="clearfix">
+				<li>
+		<a href="/index.php" title="首页"  >首页</a>
+		</li>
+				<li>
+		<a href="/index.php?m=sellcar" title="卖车"  >卖车</a>
+		</li>
+				<li>
+		<a href="/index.php?m=search" title="买车"  >买车</a>
+		</li>
+				<li>
+		<a href="/index.php?m=qiugou" title="求购"  >求购</a>
+		</li>
+				<li>
+		<a href="/index.php?m=assesscar" title="评估"  >评估</a>
+		</li>
+				<li>
+		<a href="/index.php?m=dealer" title="商家"  >商家</a>
+		</li>
+				<li>
+		<a href="/index.php?m=news" title="攻略"  >攻略</a>
+		</li>
+				<li>
+		<a href="/contact/" title="联系"  >联系</a>
+		</li>
+			</ul>
+</div>
+<!--头部end --><div class="nav">您当前的位置：<a href="/">首页</a> <span>></span> 二手车行情</div>
+		<div class="main mt10 clearfix">
+			<div class="main_left">
+				<div class="commonbox02">
+					<h3>二手车行情</h3>
+					<div class="box">
+						<h2 class="news_title"> 实战分享：我是如何一周内恢复被K首页的 </h2>
+						<p class="tc mt20">发表时间：2012-10-11 14:05:00 &nbsp;&nbsp;&nbsp;点击：<span class="hits orange01"></span></p>
+						<div class="news_info"> <p style="text-align:center;">
+	<a href="http://mytool.chinaz.com/baidusort.aspx" target="_blank">百度权重查询</a> <a href="http://jy.chinaz.com/" target="_blank">站长交易</a> <a href="http://jy.chinaz.com/" target="_blank">友情链接交换</a> <a href="http://www.313.com" target="_blank">网站建设</a>,<a href="http://www.313.com/" target="_blank">网站设计</a>,<a href="http://www.313.com" target="_blank">企业建站</a>就找<a href="http://www.313.com" target="_blank">313</a>
+</p>
+<p>
+	8月份网站被K的风波波及到了很多网站，特别是医疗网站，凑巧笔者正在一家医院负责网站优化工作，我接手的这个网站当然也没幸免于这次灾难，但庆幸的是网站只是首页被K，这个站我用了大约一周时间恢复了网站的首页。就此跟大家分享一下我是如何做的。
+</p>
+<p>
+	首先分析一下网站现状：网站首页被K，内页收录每天都在降低。收录问题理所当然需要分析一下网站日志，追踪一下蜘蛛的状态，通过观察发现日志中大量的304状态，并且这些被抓取的页面都是旧文章页面。
+</p>
+<p>
+	什么是304状态？通俗的讲304状态就是蜘蛛抓取网页，网页没有更新而显示出来的状态码，然而奇怪的是网站每天有专业网编更新。
+</p>
+<p>
+	要解决问题只能先从根本找原因，从三个页面开始分析：
+</p>
+<p>
+	<strong>一、文章页</strong>
+</p>
+<p>
+	1.文章内容中没有关联文章；
+</p>
+<p>
+	2.没有设置TAG；
+</p>
+<p>
+	3.相关文章都是一些旧的文章；
+</p>
+<p>
+	<strong>二、首页</strong>
+</p>
+<p>
+	1.每个部分的文章百分之八十都是一些旧文章；
+</p>
+<p>
+	2.网站地图sitemap.xml没有更新，停滞在一月以前；
+</p>
+<p>
+	<strong>三、列表页</strong>
+</p>
+<p>
+	由于本站是一个医疗门户站，涉及的栏目比较多，负责本站的网编比较少，每个栏目的更新比较滞后，栏目列表页长时间没有任何更新。
+</p>
+<p>
+	<strong>针对以上几个问题，我进行了以下的调整：</strong>
+</p>
+<p>
+	1.我要求网编每次添加文章时在文章中添加一篇之前发布的相关文章，并加上一个文章页链接或者经常更新的栏目页链接；
+</p>
+<p>
+	2.指定10个TAG,每篇文章编辑时插入2-3个相关的TAG；
+</p>
+<p>
+	3.相关文章部分修改为调用最新的本分类文章，并且更新全站内容页；
+</p>
+<p>
+	4.修改首页各板块，调用最新的文章，并加入随机文章；
+</p>
+<p>
+	5.要求网编每日更新完网站文章后，点击生成sitemap.xml；
+</p>
+<p>
+	6.内容页和列表页左侧部分调用最新文章和随机文章；
+</p>
+<p>
+	至此，网站内部的结构改动完成了，接下来就需要做持续性工作了。
+</p>
+<p>
+	1.要求网编每日早上8点开始编辑文章发布，间隔发布文章，记录下发布的文章页URL，然后将这些文章再发布各大分类信息网站的医疗相关分类，并添加上文章页的URL；
+</p>
+<p>
+	2.收集一些高权重秒收的论坛，签名上设置好栏目页链接，以及网站地图链接，每天发布大约15-20个高权重论坛；
+</p>
+<p>
+	3.每日新增一些资源，持续发布文章页、栏目页、以及网站地图；
+</p>
+<p>
+	4.每日观察统计网站蜘蛛爬行记录，通过记录分析每周的蜘蛛最新爬取状态，304状态都在减少，200状态逐渐增多！
+</p>
+<p>
+	就在周五早上首页恢复了。一周下来真的好累，但是看到恢复的首页心里挺欣慰的。通过这次经历，我深深体会到：作为seoer，一定要用好网站日志！
+</p> </div>
+					</div>
+				</div>
+				<div class="commonbox02 mt10">
+						<h3>相关新闻</h3>
+						<div class="box">
+							<ul class="about_news_list clearfix">
+																<li><a href="/news/201210/183.html">SEO站内篇 “内力”强劲招数的威力才会更大</a></li>
+																<li><a href="/news/201210/179.html">隐藏淘宝客网站链接的3种形式</a></li>
+																<li><a href="/news/201210/178.html">详谈Global.asa清除及百度快照的更新</a></li>
+																								<li><a href="/news/201210/185.html">浅析京东商城的SEO、用户体验及营销手段(一)</a></li>
+																<li><a href="/news/201210/186.html">实例告诉你关于内容更新的误区</a></li>
+																<li><a href="/news/201210/187.html">移动搜索引擎优化的10个小窍门</a></li>
+															</ul>
+						</div>
+					</div>
+			</div>
+			<div class="main_right">
+				<script language="JavaScript">
+$(function() {
+	//热门车源
+	$("#hotcar").load("/index.php?m=ajax&ajax=1&cartype=hot");
+})
+</script>
+<div class="commonbox02">
+	<h3>热门车源</h3>
+	<div class="box">
+		<div id="hotcar"></div>
+	</div>
+</div>			</div>
+		</div>
+		<!--版权-->
+<!--底部导航-->
+<div class="footer" id="foot">
+	<p class="tc">
+				<a href="/index.php" title="首页" >首页</a> | 
+				<a href="/index.php?m=sellcar" title="卖车" >卖车</a> | 
+				<a href="/index.php?m=search" title="买车" >买车</a> | 
+				<a href="/index.php?m=qiugou" title="求购" >求购</a> | 
+				<a href="/index.php?m=assesscar" title="评估" >评估</a> | 
+				<a href="/index.php?m=dealer" title="商家" >商家</a> | 
+				<a href="/index.php?m=news" title="攻略" >攻略</a> | 
+				<a href="/contact/" title="联系" >联系</a> | 
+			</p>
+	<p class="mt10"> Copyright  2013 二手网 版权所有. 鲁ICP备01234567号<!-- 保留本链接 --> <a href="http://www.urkeji.com/" id="qq853616368" target="_blank">网站制作</a></p>
+	<p class="mt10"> 电话：010-11111111 地址：山东东营</p>
+ </div>
+ <div id="right-side" class="right-side">
+    <ul>
+    <li class="side-top w4"><a id="backtop" title="返回顶部" href="#top" style="display: block;">返回顶部</a></li>
+  </ul>
+ </div>
+<!-- 版权 结束 --></body>
+</html>
